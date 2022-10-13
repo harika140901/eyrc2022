@@ -1,0 +1,12 @@
+<launch>
+
+<node pkg="pkg_ros_basics" type="name_of_executable.py" name="name_of_executable" 
+output="screen"/>
+
+<rosparam file="$(find pkg_ros_basics)/config/config.yaml"/>
+
+<node pkg="name_of_package" type="shell_script.sh" name="shell_script" output="screen">
+        <param name="cmd" value="$(find name_of_package)/launch/shell_script.sh"/>
+</node>
+
+</launch>
